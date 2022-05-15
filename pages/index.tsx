@@ -40,6 +40,7 @@ class Home extends React.Component<HomeProps> {
 						autentisering skjer med NextAuth.js og grensesnittet er laget med
 						Chakra UI.
 					</Text>
+					<Text>Logo er hentet fra Microsoft sin To-Do app</Text>
 					<TodoInput />
 				</Stack>
 				<Stack mb={10}>
