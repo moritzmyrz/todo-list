@@ -6,13 +6,12 @@ import {
 	Flex,
 	IconButton,
 	Stack,
-	Text,
-	useBreakpointValue,
 	useColorMode,
 	useColorModeValue,
 	useDisclosure,
 } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import React from 'react';
 import { INavItem } from '../../interfaces';
 import AvatarDropdown from '../ui/AvatarDropdown';
@@ -21,7 +20,7 @@ import MobileNav from '../ui/MobileNav';
 
 const NavItems: Array<INavItem> = [
 	{
-		label: 'Home',
+		label: 'Hjem',
 		href: '/',
 	},
 ];
@@ -59,13 +58,7 @@ export default function Header() {
 					/>
 				</Flex>
 				<Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-					<Text
-						textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-						fontFamily={'heading'}
-						color={useColorModeValue('gray.800', 'white')}
-					>
-						Logo
-					</Text>
+					<Image src="/logo.png" height={60} width={60} />
 
 					<Flex display={{ base: 'none', md: 'flex' }} ml={10}>
 						<DesktopNav items={NavItems} />

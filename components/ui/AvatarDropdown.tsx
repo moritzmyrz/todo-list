@@ -32,7 +32,7 @@ export default function AvatarDropdown({ session }) {
 							_focus={{ bgColor: 'transparent' }}
 						>
 							<Box>
-								<Text fontSize={'sm'}>Signed in as</Text>
+								<Text fontSize={'sm'}>Logget inn som</Text>
 								<Text fontWeight={'bold'} isTruncated>
 									{session.user.name}
 								</Text>
@@ -45,7 +45,7 @@ export default function AvatarDropdown({ session }) {
 								return signOut();
 							}}
 						>
-							Sign Out
+							Logg ut
 						</MenuItem>
 					</MenuList>
 				</Menu>

@@ -1,6 +1,5 @@
 import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 import NextAuth from 'next-auth';
-import DiscordProvider from 'next-auth/providers/discord';
 import GitHubProvider from 'next-auth/providers/github';
 import clientPromise from '../../../lib/mongodb';
 
@@ -13,15 +12,11 @@ export default NextAuth({
 			clientId: process.env.GITHUB_ID,
 			clientSecret: process.env.GITHUB_SECRET,
 		}),
-		DiscordProvider({
-			clientId: process.env.DISCORD_ID,
-			clientSecret: process.env.DISCORD_SECRET,
-		}),
 	],
 	secret: process.env.SECRET,
 	adapter: MongoDBAdapter(clientPromise),
 	session: {
-		strategy: 'database',
+		strategy: 'jwt',
 	},
 
 	// You can define custom pages to override the built-in ones. These will be regular Next.js pages
